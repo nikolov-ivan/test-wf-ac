@@ -14,3 +14,9 @@ jobs:
     steps:
       - name: test
         run: echo "test" + "${{ inputs.name }}"
+
+  call-internal:
+    needs: test
+    uses: ./.github/workflows/internal.yml
+    with:
+      name: ${{ inputs.name }}
