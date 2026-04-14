@@ -5,6 +5,7 @@ on:
         name:
             description: 'Name of the person to greet'
             required: false
+            type: string
 jobs:
   run-tests:
     runs-on: ubuntu-latest
