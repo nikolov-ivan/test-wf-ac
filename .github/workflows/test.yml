@@ -1,0 +1,16 @@
+name: test.yml
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Name of the person to greet'
+        required: false
+        default: 'World'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: test
+        run: echo "test" + "${{ inputs.name }}"
