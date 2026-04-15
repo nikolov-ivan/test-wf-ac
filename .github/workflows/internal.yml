@@ -12,3 +12,13 @@ jobs:
     steps:
       - name: run-tests
         run: echo "run-tests - ${{ inputs.name }}"
+
+  validate-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: validate-file
+        run: node test.js
+
